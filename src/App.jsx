@@ -24,18 +24,18 @@ function App() {
       <h1 className="text-4xl font-bold text-teal-600">
         <b className="text-pink-500">Github</b> Pagination App
       </h1>
-      <div className=" w-4/12 h-96 border-2 m-10 overflow-auto">
+      <div className=" w-4/12 h-3/6 m-10  overflow-y-auto overflow-x-hidden  text-white scroll-smooth scrollbar-thumb-gray-400 scrollbar-thin scrollbar-thumb-rounded-lg scrollbar-track">
         {repositories &&
           repositories.map(({ id, name, owner, description }) => (
-            <div key={id} className="flex items-center gap-2 bg-red-700">
+            <div key={id} className="flex m-2 p-2 items-center gap-2 rounded-lg cursor-pointer bg-teal-600">
               <img
                 className="align-middle m-2 w-12 h-12 rounded-full"
                 src={owner.avatar_url}
                 alt={id}
               />
               <div className="flex flex-col">
-                <h4>{name}</h4>
-                <p>{description}</p>
+                <h4 className=" font-bold truncate text-wrap">{name}</h4>
+                <p className="truncate line-clamp-1 text-wrap">{description}</p>
               </div>
             </div>
           ))}
